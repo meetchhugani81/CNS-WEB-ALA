@@ -16,6 +16,24 @@
 
 A single-file interactive web application built with HTML, CSS, and JavaScript that demonstrates three cryptographic concepts through live, hands-on simulations. All cryptographic operations run entirely in the browser using the native Web Crypto API — no backend, no external libraries, no internet required after loading.
 
+The UI uses a dark cyberpunk / terminal aesthetic with phosphor-green styling, scanline overlays, glitch animations, and monospace fonts.
+
+---
+
+## Screenshots
+
+### Home Screen
+![Home Screen](ss_home.png)
+
+### ALA-01 — Digital Signature System
+![Digital Signature System](ss_digitial.png)
+
+### ALA-02 — Integrity Analyzer
+![Integrity Analyzer](ss_integrity.png)
+
+### ALA-03 — HMAC Authentication
+![HMAC Authentication](ss_hmac.png)
+
 ---
 
 ## ALA-01 — Digital Signature System
@@ -42,8 +60,8 @@ Compares SHA-1, SHA-256, and SHA-512 hash outputs and visualises the avalanche e
 
 ### Steps
 - Enter an original message and a slightly modified version
-- Compute SHA-1, SHA-256, SHA-512 hashes for both inputs
-- View a Hash Comparison Table with all digests side by side
+- Compute SHA-1, SHA-256, SHA-512 hashes for both inputs side by side
+- View a Hash Comparison Table with all digests
 - Avalanche Effect bar showing percentage of bits flipped
 - 256-bit flip grid — red cells = flipped bits, dark cells = unchanged
 
@@ -55,12 +73,12 @@ Cryptographic hash functions map arbitrary input to a fixed-length digest. The A
 ## ALA-03 — HMAC Authentication
 
 ### What it does
-Simulates a sender-receiver HMAC-SHA256 authentication flow with tamper detection.
+Simulates a sender-receiver HMAC-SHA256 authentication flow with live tamper detection.
 
 ### Steps
 - Sender inputs a shared secret key and message
 - HMAC-SHA256 tag is generated and transmitted to the Receiver panel
-- Receiver recomputes HMAC using the same key and compares
+- Receiver recomputes HMAC using the same key and compares tags
 - Test Tampered mode modifies the message to demonstrate MAC mismatch
 
 ### Concept
@@ -73,10 +91,12 @@ HMAC (Hash-based Message Authentication Code) uses a shared secret key combined 
 | Technology | Usage |
 |---|---|
 | HTML5 | Structure and layout |
-| CSS3 | Cyberpunk theme, animations, scanline effect |
+| CSS3 | Cyberpunk theme, animations, scanline effect, grid background |
 | Vanilla JavaScript | All logic and DOM manipulation |
 | Web Crypto API | RSA key generation, SHA hashing, HMAC signing |
 | Google Fonts | Orbitron, Share Tech Mono, Rajdhani |
+
+**No frameworks. No build tools. No dependencies. Open the `.html` file and it works.**
 
 ---
 
@@ -86,9 +106,9 @@ HMAC (Hash-based Message Authentication Code) uses a shared secret key combined 
 # No installation needed.
 # Just open the file in any modern browser:
 
-open CNS_ALA.html          # macOS
-start CNS_ALA.html         # Windows
-xdg-open CNS_ALA.html      # Linux
+open index.html          # macOS
+start index.html         # Windows
+xdg-open index.html      # Linux
 ```
 
 > Requires a modern browser that supports the Web Crypto API — Chrome, Firefox, Edge, Safari all work.
@@ -98,8 +118,12 @@ xdg-open CNS_ALA.html      # Linux
 ## File Structure
 
 ```
-CNS_ALA.html        ← Entire application (HTML + CSS + JS in one file)
+index.html          ← Entire application (HTML + CSS + JS in one file)
 README.md           ← This file
+ss_home.png         ← Screenshot: Home screen
+ss_digitial.png     ← Screenshot: ALA-01 Digital Signature
+ss_integrity.png    ← Screenshot: ALA-02 Integrity Analyzer
+ss_hmac.png         ← Screenshot: ALA-03 HMAC Authentication
 ```
 
 ---
